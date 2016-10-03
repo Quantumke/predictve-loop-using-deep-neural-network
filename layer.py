@@ -23,6 +23,20 @@ class predictloop():
                [1,1,1] ])
     #output  dataset
     y=np.array([[0,0,1,1]]).T
+    #seed random numbers to make calculations
+    np.random.seed(1)
+    #initialize weights randomly with mean 0
+    syn0=2*np.random.random((3,1))-1
+    for iter in xrange(10000):
+        #foward propagation
+        l0=X
+        l1=nonlin(np.dot(l0,syn0))
+        #calculate error
+        l1_error=y-l1
+        #multiply error bu slope of sigmoid at values l1
+        l1_delta=l1_error*nonlin(l1,True)
+        
+        
 
 
 
