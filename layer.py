@@ -11,7 +11,8 @@ class predictloop():
     def __init__(self, *args, **kwargs):
         self.author="Benson Nguru"
         self.nonlin()
-    #sigmoid function
+    """ sigmoid function maps any value between 0 and 1.
+          used to convert numbers to probabiliities"""
     def nonlin(x, deriv=False):
         if(deriv=True):
             return x *(1-x)
@@ -35,7 +36,9 @@ class predictloop():
         l1_error=y-l1
         #multiply error bu slope of sigmoid at values l1
         l1_delta=l1_error*nonlin(l1,True)
-        
+        #update weights
+        syn0 +=np.dot(l0.T, li_delta)
+        print l1, "output after training"
         
 
 
