@@ -22,7 +22,8 @@ class predictloop():
                [0,1,1],
                [1,0,1],
                [1,1,1] ])
-    #output  dataset
+    #output  dataset using transpose function
+    #after transponse each matrix has 4 rows with one column
     y=np.array([[0,0,1,1]]).T
     #seed random numbers to make calculations
     np.random.seed(1)
